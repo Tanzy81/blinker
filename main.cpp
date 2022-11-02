@@ -51,11 +51,14 @@ float readTemp() {
 // Power up the Thermistor
     vdd = true;
     gnd = false;
-// do the measurement and convert to Celcius
+// do the measurement 
+
+    float refVoltage = tempVoltage.read() * 2.4; // Range of ADC 0->2*Vref
 
 // turn off the current though the thermistor
     vdd = false;
-    float refVoltage = tempVoltage.read() * 2.4; // Range of ADC 0->2*Vref
+// and convert to Celcius
+
     float refCurrent = refVoltage  / 10000.0; // 10k Reference Resistor
     float thermVoltage = 3.3 - refVoltage;    // Assume supply voltage is 3.3v
     float thermResistance = thermVoltage / refCurrent; 
