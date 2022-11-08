@@ -6,6 +6,7 @@
 #include "mbed.h"
 #include "stdio.h"
 
+
 /* Reference resistor in series with the thermistor is of 10kohm */
 #define R_REFERENCE                         (float)(10000)
 
